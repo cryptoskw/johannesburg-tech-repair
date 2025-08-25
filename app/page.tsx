@@ -7,7 +7,6 @@ import {
   MapPin,
   Clock,
   Star,
-  Wrench,
   Smartphone,
   Monitor,
   HardDrive,
@@ -24,26 +23,28 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <header className="sticky top-0 z-50 w-full border-b bg-background backdrop-blur supports-[backdrop-filter]:bg-background/95">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center space-x-2">
-            <Wrench className="h-6 w-6 text-primary" />
-            <span className="font-bold text-xl">Johannesburg Tech Repair</span>
+            <div className="bg-black text-white p-2 rounded-lg">
+              <span className="font-bold text-lg">JTR</span>
+            </div>
+            <span className="font-bold text-xl text-foreground">Johannesburg Tech Repair</span>
           </div>
           <nav className="hidden md:flex items-center space-x-6">
-            <Link href="#services" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link href="/services" className="text-sm font-medium text-foreground hover:text-black transition-colors">
               Services
             </Link>
-            <Link href="#about" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link href="/about" className="text-sm font-medium text-foreground hover:text-black transition-colors">
               About
             </Link>
-            <Link href="#pricing" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link href="/pricing" className="text-sm font-medium text-foreground hover:text-black transition-colors">
               Pricing
             </Link>
-            <Link href="#contact" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link href="/contact" className="text-sm font-medium text-foreground hover:text-black transition-colors">
               Contact
             </Link>
-            <Button size="sm" className="bg-secondary hover:bg-secondary/90">
+            <Button size="sm" className="bg-black text-white hover:bg-gray-800">
               Get Quote
             </Button>
           </nav>
@@ -51,71 +52,71 @@ export default function HomePage() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32">
+      <section className="relative py-20 lg:py-32 bg-background">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <Badge variant="secondary" className="w-fit bg-secondary text-secondary-foreground">
+              <Badge variant="secondary" className="w-fit bg-black text-white">
                 ⭐ #1 Rated Tech Repair in Johannesburg
               </Badge>
               <h1 className="text-4xl lg:text-6xl font-bold tracking-tight">
                 Expert Computer Repair Services in
-                <span className="text-primary"> Johannesburg</span>
+                <span className="text-black"> Johannesburg</span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
                 Professional laptop repair, desktop repair, phone repair & IT support with same-day service. Certified
                 technicians, 90-day warranty, and unbeatable prices. Serving all of Johannesburg since 2015.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="text-lg px-8 bg-secondary hover:bg-secondary/90">
+                <Button size="lg" className="text-lg px-8 bg-black hover:bg-gray-800 text-white">
                   <Phone className="mr-2 h-5 w-5" />
-                  Call +27 11 123 4567
+                  Call 075 046 1725
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
-                  className="text-lg px-8 border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
+                  className="text-lg px-8 border-black text-black hover:bg-black hover:text-white bg-transparent"
                 >
                   Get Free Diagnosis
                 </Button>
               </div>
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div className="flex items-center text-muted-foreground">
-                  <CheckCircle className="mr-2 h-4 w-4 text-secondary" />
+                  <CheckCircle className="mr-2 h-4 w-4 text-black" />
                   Same Day Repairs Available
                 </div>
                 <div className="flex items-center text-muted-foreground">
-                  <CheckCircle className="mr-2 h-4 w-4 text-secondary" />
+                  <CheckCircle className="mr-2 h-4 w-4 text-black" />
                   90-Day Parts & Labor Warranty
                 </div>
                 <div className="flex items-center text-muted-foreground">
-                  <CheckCircle className="mr-2 h-4 w-4 text-secondary" />
+                  <CheckCircle className="mr-2 h-4 w-4 text-black" />
                   Free Pickup & Delivery
                 </div>
                 <div className="flex items-center text-muted-foreground">
-                  <CheckCircle className="mr-2 h-4 w-4 text-secondary" />
+                  <CheckCircle className="mr-2 h-4 w-4 text-black" />
                   No Fix, No Fee Guarantee
                 </div>
               </div>
             </div>
             <div className="relative">
               <img
-                src="/computer-repair-technician.png"
-                alt="Professional computer repair technician fixing laptop in Johannesburg workshop"
-                className="rounded-lg shadow-2xl"
+                src="/professional-tech-repair-workshop-with-modern-equi.png"
+                alt="Professional computer repair technician fixing laptop in modern Johannesburg workshop"
+                className="rounded-lg shadow-xl border border-gray-200"
               />
-              <div className="absolute -bottom-6 -left-6 bg-card p-4 rounded-lg shadow-lg border">
+              <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg border border-gray-200">
                 <div className="flex items-center space-x-2">
-                  <Award className="h-6 w-6 text-secondary" />
+                  <Award className="h-6 w-6 text-black" />
                   <div>
                     <div className="font-semibold text-sm">Certified Technicians</div>
                     <div className="text-xs text-muted-foreground">Microsoft & CompTIA Certified</div>
                   </div>
                 </div>
               </div>
-              <div className="absolute -top-6 -right-6 bg-card p-4 rounded-lg shadow-lg border">
+              <div className="absolute -top-6 -right-6 bg-white p-4 rounded-lg shadow-lg border border-gray-200">
                 <div className="flex items-center space-x-2">
-                  <Users className="h-6 w-6 text-secondary" />
+                  <Users className="h-6 w-6 text-black" />
                   <div>
                     <div className="font-semibold text-sm">5000+ Happy Customers</div>
                     <div className="text-xs text-muted-foreground">4.9/5 Average Rating</div>
@@ -127,7 +128,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-12 bg-primary text-primary-foreground">
+      {/* Stats Section */}
+      <section className="py-12 bg-black text-white">
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
@@ -151,7 +153,7 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-muted/50">
+      <section id="services" className="py-20 bg-gray-50">
         <div className="container">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold">Complete Tech Repair Services in Johannesburg</h2>
@@ -170,6 +172,7 @@ export default function HomePage() {
                   "Screen replacement, motherboard repair, hardware upgrades, virus removal, performance optimization",
                 price: "From R299",
                 popular: true,
+                image: "/professional-male-technician-with-computer-repair-.png",
               },
               {
                 icon: Smartphone,
@@ -178,6 +181,7 @@ export default function HomePage() {
                   "iPhone & Android screen repair, battery replacement, water damage recovery, charging port fixes",
                 price: "From R199",
                 popular: false,
+                image: "/professional-female-technician-working-on-mobile-d.png",
               },
               {
                 icon: HardDrive,
@@ -185,6 +189,7 @@ export default function HomePage() {
                 description: "Professional data recovery from crashed hard drives, SSDs, USB drives, and memory cards",
                 price: "From R499",
                 popular: false,
+                image: "/data-recovery-hard-drive-repair.png",
               },
               {
                 icon: Wifi,
@@ -193,6 +198,7 @@ export default function HomePage() {
                   "Business network installation, WiFi troubleshooting, router configuration, security setup",
                 price: "From R399",
                 popular: false,
+                image: "/network-setup-wifi-installation.png",
               },
               {
                 icon: Shield,
@@ -200,6 +206,7 @@ export default function HomePage() {
                 description: "Complete system cleanup, malware removal, antivirus installation, security optimization",
                 price: "From R249",
                 popular: false,
+                image: "/computer-security-virus-removal.png",
               },
               {
                 icon: Zap,
@@ -207,23 +214,32 @@ export default function HomePage() {
                 description: "RAM upgrades, SSD installation, graphics card upgrades, performance enhancement",
                 price: "From R199",
                 popular: false,
+                image: "/computer-hardware-upgrade-installation.png",
               },
             ].map((service, index) => (
-              <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 relative">
-                {service.popular && (
-                  <Badge className="absolute -top-2 left-4 bg-secondary text-secondary-foreground">Most Popular</Badge>
-                )}
+              <Card
+                key={index}
+                className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 relative bg-white border border-gray-200"
+              >
+                {service.popular && <Badge className="absolute -top-2 left-4 bg-black text-white">Most Popular</Badge>}
+                <div className="h-48 overflow-hidden rounded-t-lg">
+                  <img
+                    src={service.image || "/placeholder.svg"}
+                    alt={`${service.title} service`}
+                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300"
+                  />
+                </div>
                 <CardHeader>
-                  <service.icon className="h-12 w-12 text-primary mb-4" />
+                  <service.icon className="h-12 w-12 text-black mb-4" />
                   <CardTitle className="text-xl">{service.title}</CardTitle>
                   <CardDescription className="text-base leading-relaxed">{service.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold text-primary">{service.price}</span>
+                    <span className="text-2xl font-bold text-black">{service.price}</span>
                     <Button
                       variant="outline"
-                      className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
+                      className="border-black text-black hover:bg-black hover:text-white bg-transparent"
                     >
                       Get Quote
                     </Button>
@@ -235,6 +251,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Features Section */}
       <section className="py-20">
         <div className="container">
           <div className="text-center space-y-4 mb-16">
@@ -266,10 +283,13 @@ export default function HomePage() {
                 stat: "90 Day Warranty",
               },
             ].map((feature, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+              <Card
+                key={index}
+                className="text-center hover:shadow-lg transition-shadow bg-white border border-gray-200"
+              >
                 <CardHeader>
-                  <feature.icon className="h-16 w-16 text-secondary mx-auto mb-4" />
-                  <CardTitle className="text-2xl font-bold text-primary mb-2">{feature.stat}</CardTitle>
+                  <feature.icon className="h-16 w-16 text-black mx-auto mb-4" />
+                  <CardTitle className="text-2xl font-bold text-black mb-2">{feature.stat}</CardTitle>
                   <CardTitle className="text-xl">{feature.title}</CardTitle>
                   <CardDescription className="text-base leading-relaxed">{feature.description}</CardDescription>
                 </CardHeader>
@@ -279,7 +299,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-20 bg-muted/50">
+      {/* Real Reviews Section */}
+      <section className="py-20 bg-gray-50">
         <div className="container">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold">Real Reviews From Real Customers</h2>
@@ -315,14 +336,14 @@ export default function HomePage() {
                 service: "Performance Optimization",
               },
             ].map((testimonial, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
+              <Card key={index} className="hover:shadow-lg transition-shadow bg-white border border-gray-200">
                 <CardHeader>
                   <div className="flex items-center space-x-1 mb-2">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-secondary text-secondary" />
+                      <Star key={i} className="h-4 w-4 fill-black text-black" />
                     ))}
                   </div>
-                  <Badge variant="outline" className="w-fit mb-2">
+                  <Badge variant="outline" className="w-fit mb-2 border-black text-black">
                     {testimonial.service}
                   </Badge>
                   <CardDescription className="text-base italic leading-relaxed">"{testimonial.review}"</CardDescription>
@@ -337,118 +358,28 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-20">
+      {/* Map Section */}
+      <section className="py-20">
         <div className="container">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold">About Us</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Founded in 2015, Johannesburg Tech Repair has been providing top-notch computer and device repair services
-              to the residents of Johannesburg. Our team of certified technicians is dedicated to offering fast,
-              reliable, and affordable solutions for all your tech needs.
+            <h2 className="text-3xl lg:text-4xl font-bold">Find Us in Johannesburg</h2>
+            <p className="text-xl text-muted-foreground">
+              Conveniently located in the heart of Johannesburg with easy access and free parking
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="relative">
-              <img src="/workshop.jpg" alt="Our tech repair workshop" className="rounded-lg shadow-2xl" />
+          <div className="bg-gray-100 h-96 rounded-lg border border-gray-200 flex items-center justify-center">
+            <div className="text-center">
+              <MapPin className="h-16 w-16 text-black mx-auto mb-4" />
+              <h3 className="text-xl font-bold mb-2">123 Main Street, Johannesburg CBD</h3>
+              <p className="text-muted-foreground">Interactive map will be embedded here</p>
             </div>
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold">Our Mission</h3>
-              <p className="text-lg text-muted-foreground">
-                To empower our community with reliable technology solutions, ensuring that everyone has access to the
-                tools they need to succeed in their personal and professional lives.
-              </p>
-              <h3 className="text-2xl font-bold">Our Values</h3>
-              <ul className="list-disc list-inside space-y-2 text-lg text-muted-foreground">
-                <li>Customer Satisfaction</li>
-                <li>Professionalism</li>
-                <li>Quality</li>
-                <li>Trustworthiness</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section id="pricing" className="py-20 bg-muted/50">
-        <div className="container">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold">Our Pricing</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              We offer competitive pricing on all our services, ensuring that you get the best value for your money. Our
-              prices are transparent and clearly listed below.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Monitor,
-                title: "Laptop & Desktop Repair",
-                description:
-                  "Screen replacement, motherboard repair, hardware upgrades, virus removal, performance optimization",
-                price: "From R299",
-              },
-              {
-                icon: Smartphone,
-                title: "Mobile Phone Repair",
-                description:
-                  "iPhone & Android screen repair, battery replacement, water damage recovery, charging port fixes",
-                price: "From R199",
-              },
-              {
-                icon: HardDrive,
-                title: "Data Recovery Services",
-                description: "Professional data recovery from crashed hard drives, SSDs, USB drives, and memory cards",
-                price: "From R499",
-              },
-              {
-                icon: Wifi,
-                title: "Network & WiFi Setup",
-                description:
-                  "Business network installation, WiFi troubleshooting, router configuration, security setup",
-                price: "From R399",
-              },
-              {
-                icon: Shield,
-                title: "Virus & Malware Removal",
-                description: "Complete system cleanup, malware removal, antivirus installation, security optimization",
-                price: "From R249",
-              },
-              {
-                icon: Zap,
-                title: "Hardware Upgrades",
-                description: "RAM upgrades, SSD installation, graphics card upgrades, performance enhancement",
-                price: "From R199",
-              },
-            ].map((service, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <service.icon className="h-12 w-12 text-primary mb-4" />
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
-                  <CardDescription className="text-base leading-relaxed">{service.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold text-primary">{service.price}</span>
-                    <Button
-                      variant="outline"
-                      className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
-                    >
-                      Get Quote
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20">
+      <section id="contact" className="py-20 bg-gray-50">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12">
             <div className="space-y-6">
@@ -459,25 +390,25 @@ export default function HomePage() {
 
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <Phone className="h-5 w-5 text-primary" />
+                  <Phone className="h-5 w-5 text-black" />
                   <div>
-                    <span className="text-lg font-semibold">+27 11 123 4567</span>
+                    <span className="text-lg font-semibold">075 046 1725</span>
                     <div className="text-sm text-muted-foreground">24/7 Emergency Line</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Mail className="h-5 w-5 text-primary" />
-                  <span className="text-lg">info@johannesburgtechrepair.online</span>
+                  <Mail className="h-5 w-5 text-black" />
+                  <span className="text-lg">info@fixmygaget.co.za</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <MapPin className="h-5 w-5 text-primary" />
+                  <MapPin className="h-5 w-5 text-black" />
                   <div>
                     <span className="text-lg">123 Main Street, Johannesburg CBD</span>
                     <div className="text-sm text-muted-foreground">Free parking available</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Clock className="h-5 w-5 text-primary" />
+                  <Clock className="h-5 w-5 text-black" />
                   <div>
                     <span className="text-lg">Mon-Fri: 8AM-6PM, Sat: 9AM-4PM</span>
                     <div className="text-sm text-muted-foreground">Emergency service available 24/7</div>
@@ -485,7 +416,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="bg-muted p-4 rounded-lg">
+              <div className="bg-white p-4 rounded-lg border border-gray-200">
                 <h4 className="font-semibold mb-2">Service Areas:</h4>
                 <p className="text-sm text-muted-foreground">
                   Sandton, Rosebank, Fourways, Randburg, Midrand, Roodepoort, Soweto, Johannesburg CBD, and surrounding
@@ -494,7 +425,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <Card>
+            <Card className="bg-white border border-gray-200">
               <CardHeader>
                 <CardTitle>Get Free Quote</CardTitle>
                 <CardDescription>Tell us about your device issue</CardDescription>
@@ -503,20 +434,29 @@ export default function HomePage() {
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="text-sm font-medium">Name</label>
-                    <input className="w-full mt-1 px-3 py-2 border rounded-md" placeholder="Your name" />
+                    <input
+                      className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-black focus:border-black bg-white"
+                      placeholder="Your name"
+                    />
                   </div>
                   <div>
                     <label className="text-sm font-medium">Phone</label>
-                    <input className="w-full mt-1 px-3 py-2 border rounded-md" placeholder="Your phone" />
+                    <input
+                      className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-black focus:border-black bg-white"
+                      placeholder="Your phone"
+                    />
                   </div>
                 </div>
                 <div>
                   <label className="text-sm font-medium">Email</label>
-                  <input className="w-full mt-1 px-3 py-2 border rounded-md" placeholder="Your email" />
+                  <input
+                    className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-black focus:border-black bg-white"
+                    placeholder="Your email"
+                  />
                 </div>
                 <div>
                   <label className="text-sm font-medium">Device Type</label>
-                  <select className="w-full mt-1 px-3 py-2 border rounded-md">
+                  <select className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-black focus:border-black bg-white">
                     <option>Select device type</option>
                     <option>Laptop</option>
                     <option>Desktop</option>
@@ -528,11 +468,11 @@ export default function HomePage() {
                 <div>
                   <label className="text-sm font-medium">Issue Description</label>
                   <textarea
-                    className="w-full mt-1 px-3 py-2 border rounded-md h-24"
+                    className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md h-24 focus:ring-2 focus:ring-black focus:border-black bg-white"
                     placeholder="Describe the problem..."
                   ></textarea>
                 </div>
-                <Button className="w-full bg-secondary hover:bg-secondary/90">Get Free Quote</Button>
+                <Button className="w-full bg-black hover:bg-gray-800 text-white">Get Free Quote</Button>
               </CardContent>
             </Card>
           </div>
@@ -540,20 +480,22 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-muted py-12">
+      <footer className="bg-black text-white py-12">
         <div className="container">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
-                <Wrench className="h-6 w-6 text-primary" />
+                <div className="bg-white text-black p-2 rounded-lg">
+                  <span className="font-bold text-lg">JTR</span>
+                </div>
                 <span className="font-bold text-xl">Johannesburg Tech Repair</span>
               </div>
-              <p className="text-muted-foreground">Professional computer and device repair services in Johannesburg.</p>
+              <p className="text-gray-300">Professional computer and device repair services in Johannesburg.</p>
             </div>
 
             <div className="space-y-4">
               <h4 className="font-semibold">Services</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
+              <ul className="space-y-2 text-sm text-gray-300">
                 <li>Laptop Repair</li>
                 <li>Desktop Repair</li>
                 <li>Mobile Phone Repair</li>
@@ -566,16 +508,16 @@ export default function HomePage() {
 
             <div className="space-y-4">
               <h4 className="font-semibold">Contact</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>+27 11 123 4567</li>
-                <li>info@johannesburgtechrepair.online</li>
+              <ul className="space-y-2 text-sm text-gray-300">
+                <li>075 046 1725</li>
+                <li>info@fixmygaget.co.za</li>
                 <li>123 Main Street, Johannesburg CBD</li>
               </ul>
             </div>
 
             <div className="space-y-4">
               <h4 className="font-semibold">Hours</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
+              <ul className="space-y-2 text-sm text-gray-300">
                 <li>Mon-Fri: 8AM-6PM</li>
                 <li>Saturday: 9AM-4PM</li>
                 <li>Sunday: Closed</li>
@@ -583,7 +525,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="border-t mt-8 pt-8 text-center text-sm text-muted-foreground">
+          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
             <p>&copy; 2024 Johannesburg Tech Repair. All rights reserved.</p>
           </div>
         </div>

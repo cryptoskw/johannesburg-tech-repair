@@ -11,20 +11,22 @@ export default function ContactPage() {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
-            <Wrench className="h-6 w-6 text-primary" />
+            <Wrench className="h-6 w-6 text-blue-600" />
             <span className="font-bold text-xl">Johannesburg Tech Repair</span>
           </Link>
           <nav className="hidden md:flex items-center space-x-6">
-            <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link href="/" className="text-sm font-medium hover:text-blue-600 transition-colors">
               Home
             </Link>
-            <Link href="/services" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link href="/services" className="text-sm font-medium hover:text-blue-600 transition-colors">
               Services
             </Link>
-            <Link href="/about" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link href="/about" className="text-sm font-medium hover:text-blue-600 transition-colors">
               About
             </Link>
-            <Button size="sm">Get Quote</Button>
+            <Button size="sm" className="bg-blue-600 hover:bg-blue-700 text-white">
+              Get Quote
+            </Button>
           </nav>
         </div>
       </header>
@@ -32,7 +34,7 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="py-20">
         <div className="container">
-          <Link href="/" className="inline-flex items-center text-primary hover:underline mb-8">
+          <Link href="/" className="inline-flex items-center text-blue-600 hover:underline mb-8">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Home
           </Link>
@@ -72,7 +74,7 @@ export default function ContactPage() {
               {
                 icon: Mail,
                 title: "Email",
-                info: "info@fixmygagets.co.za",
+                info: "info@fixmygaget.co.za",
                 description: "Detailed inquiries welcome",
                 action: "Send Email",
               },
@@ -86,13 +88,17 @@ export default function ContactPage() {
             ].map((method, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow">
                 <CardHeader>
-                  <method.icon className="h-12 w-12 text-primary mx-auto mb-4" />
+                  <method.icon className="h-12 w-12 text-blue-600 mx-auto mb-4" />
                   <CardTitle className="text-lg">{method.title}</CardTitle>
                   <CardDescription className="font-medium text-foreground">{method.info}</CardDescription>
                   <CardDescription className="text-sm">{method.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button variant="outline" size="sm" className="w-full bg-transparent">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white bg-transparent"
+                  >
                     {method.action}
                   </Button>
                 </CardContent>
@@ -198,7 +204,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <Button className="w-full" size="lg">
+                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white" size="lg">
                   Get Free Quote
                 </Button>
 
@@ -214,7 +220,7 @@ export default function ContactPage() {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center space-x-2">
-                    <MapPin className="h-5 w-5 text-primary" />
+                    <MapPin className="h-5 w-5 text-blue-600" />
                     <span>Visit Our Workshop</span>
                   </CardTitle>
                 </CardHeader>
@@ -234,7 +240,10 @@ export default function ContactPage() {
                     </p>
                   </div>
 
-                  <Button variant="outline" className="w-full bg-transparent">
+                  <Button
+                    variant="outline"
+                    className="w-full border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white bg-transparent"
+                  >
                     <MapPin className="mr-2 h-4 w-4" />
                     Get Directions
                   </Button>
@@ -245,7 +254,7 @@ export default function ContactPage() {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center space-x-2">
-                    <Clock className="h-5 w-5 text-primary" />
+                    <Clock className="h-5 w-5 text-blue-600" />
                     <span>Business Hours</span>
                   </CardTitle>
                 </CardHeader>
@@ -266,8 +275,8 @@ export default function ContactPage() {
                     ))}
                   </div>
 
-                  <div className="mt-4 p-3 bg-primary/10 rounded-lg">
-                    <p className="text-sm font-medium text-primary">Emergency Repairs</p>
+                  <div className="mt-4 p-3 bg-blue-50 rounded-lg">
+                    <p className="text-sm font-medium text-blue-600">Emergency Repairs</p>
                     <p className="text-xs text-muted-foreground">
                       After-hours emergency service available by appointment
                     </p>
@@ -282,7 +291,7 @@ export default function ContactPage() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="flex items-center space-x-3">
-                    <Phone className="h-5 w-5 text-primary" />
+                    <Phone className="h-5 w-5 text-blue-600" />
                     <div>
                       <p className="font-medium">075 046 1725</p>
                       <p className="text-sm text-muted-foreground">Call or WhatsApp</p>
@@ -290,9 +299,9 @@ export default function ContactPage() {
                   </div>
 
                   <div className="flex items-center space-x-3">
-                    <Mail className="h-5 w-5 text-primary" />
+                    <Mail className="h-5 w-5 text-blue-600" />
                     <div>
-                      <p className="font-medium">info@fixmygagets.co.za</p>
+                      <p className="font-medium">info@fixmygaget.co.za</p>
                       <p className="text-sm text-muted-foreground">Email us anytime</p>
                     </div>
                   </div>
@@ -369,7 +378,7 @@ export default function ContactPage() {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
-                <Wrench className="h-6 w-6 text-primary" />
+                <Wrench className="h-6 w-6 text-blue-600" />
                 <span className="font-bold text-xl">Johannesburg Tech Repair</span>
               </div>
               <p className="text-muted-foreground">Professional computer and device repair services in Johannesburg.</p>
@@ -389,7 +398,7 @@ export default function ContactPage() {
               <h4 className="font-semibold">Contact</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>075 046 1725</li>
-                <li>info@fixmygagets.co.za</li>
+                <li>info@fixmygaget.co.za</li>
                 <li>123 Main Street, Johannesburg</li>
               </ul>
             </div>

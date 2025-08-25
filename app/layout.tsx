@@ -1,18 +1,19 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { DM_Sans, Space_Grotesk } from "next/font/google"
+import { Montserrat, Open_Sans } from "next/font/google"
 import "./globals.css"
 
-const dmSans = DM_Sans({
+const montserrat = Montserrat({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-dm-sans",
+  variable: "--font-montserrat",
+  weight: ["400", "600", "700", "900"], // Including black weight for headings
 })
 
-const spaceGrotesk = Space_Grotesk({
+const openSans = Open_Sans({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-space-grotesk",
+  variable: "--font-open-sans",
 })
 
 export const metadata: Metadata = {
@@ -61,7 +62,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${dmSans.variable} ${spaceGrotesk.variable}`}>
+    <html lang="en" className={`${montserrat.variable} ${openSans.variable}`}>
       <head>
         <link rel="canonical" href="https://www.johannesburgtechrepair.online" />
         <meta name="geo.region" content="ZA-GP" />
