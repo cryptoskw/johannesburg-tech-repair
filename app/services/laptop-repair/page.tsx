@@ -54,7 +54,7 @@ export default function LaptopRepairPage() {
               </Button>
               <Button size="lg" variant="outline" className="text-lg px-8 py-4 bg-transparent">
                 <Phone className="w-5 h-5 mr-2" />
-                Call (011) 123-4567
+                Call (075) 046-1725
               </Button>
             </div>
           </div>
@@ -334,7 +334,7 @@ export default function LaptopRepairPage() {
               className="text-lg px-8 py-4 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
             >
               <Phone className="w-5 h-5 mr-2" />
-              Call (011) 123-4567
+              Call (075) 046-1725
             </Button>
           </div>
         </div>
