@@ -17,7 +17,7 @@ export function Header() {
             <div className="w-20 h-12 bg-cyan-600 rounded-lg flex items-center justify-center overflow-hidden">
               <img src="/logo-JTR.png" alt="Johannesburg Tech Repair Logo" className="w-full h-full object-contain" />
             </div>
-            <span className="font-bold text-xl text-gray-900">Johannesburg Tech Repair</span>
+            
           </Link>
 
           {/* Desktop Navigation */}
