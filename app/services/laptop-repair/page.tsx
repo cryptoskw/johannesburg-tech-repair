@@ -204,7 +204,7 @@ export default function LaptopRepairPage() {
                   identify the root cause and provide targeted solutions.
                 </p>
                 <Button size="lg" variant="secondary" className="text-lg px-8 py-4">
-                  Get Free Performance Diagnosis
+                  Get Quick Diagnosis
                 </Button>
               </CardContent>
             </Card>
