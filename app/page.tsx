@@ -17,7 +17,7 @@ export default function HomePage() {
           addressRegion: "Gauteng",
           addressCountry: "ZA",
         }}
-        telephone="(011) 123-4567"
+        telephone="(075) 046-1725"
         email="info@johannesburgtechrepair.online"
         url="https://johannesburgtechrepair.online"
         serviceArea={["Johannesburg", "Sandton", "Rosebank", "Fourways", "Randburg"]}
@@ -66,11 +66,11 @@ export default function HomePage() {
               <Link href="/contact">Book Free Diagnosis</Link>
             </TrackedButton>
             <PhoneButton
-              phoneNumber="(011) 123-4567"
+              phoneNumber="(075) 046-1725"
               size="lg"
               className="text-lg px-8 py-4 bg-transparent border border-input hover:bg-accent hover:text-accent-foreground"
             >
-              Call (011) 123-4567
+              Call (078) 046-1725
             </PhoneButton>
           </div>
 
@@ -413,11 +413,11 @@ export default function HomePage() {
               <Link href="/contact">Book Free Diagnosis</Link>
             </TrackedButton>
             <PhoneButton
-              phoneNumber="(011) 123-4567"
+              phoneNumber="(078) 046-1725"
               size="lg"
               className="text-lg px-8 py-4 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
             >
-              Call (011) 123-4567
+              Call (075) 046-1725
             </PhoneButton>
           </div>
         </div>
