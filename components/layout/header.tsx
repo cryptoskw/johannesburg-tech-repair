@@ -16,8 +16,7 @@ export function Header() {
           <Link href="/" className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-cyan-600 rounded-lg flex items-center justify-center">
               <img
-              src="public/logo-JTR.png"
-              alt="logo-JTR"
+                 src="public/logo-JTR.png"
               />
             </div>
             <span className="font-bold text-xl text-gray-900">Johannesburg Tech Repair</span>
