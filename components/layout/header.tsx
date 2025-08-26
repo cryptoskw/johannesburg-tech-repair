@@ -14,10 +14,7 @@ export function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/public/placeholder-logo.svg" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-cyan-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm"></span>
-            </div>
-            <span className="font-bold text-xl text-gray-900">Johannesburg Tech Repair</span>
+
           </Link>
 
           {/* Desktop Navigation */}
