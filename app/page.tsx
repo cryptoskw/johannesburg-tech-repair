@@ -68,7 +68,7 @@ export default function HomePage() {
             <PhoneButton
               phoneNumber="(075) 046-1725"
               size="lg"
-              className="text-lg px-8 py-4 bg-transparent border border-input hover:bg-accent hover:text-accent-foreground"
+              className="text-lg px-8 py-4 bg-primary  hover:bg-accent hover:text-accent-foreground"
             >
               Call (078) 046-1725
             </PhoneButton>
