@@ -15,7 +15,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-cyan-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">JTR</span>
+              <span className="text-white font-bold text-sm"></span>
             </div>
             <span className="font-bold text-xl text-gray-900">Johannesburg Tech Repair</span>
           </Link>
@@ -76,7 +76,7 @@ export function Header() {
           {/* Call Button & Mobile Menu */}
           <div className="flex items-center space-x-4">
             <Button asChild className="bg-cyan-600 hover:bg-cyan-700">
-              <Link href="tel:+27123456789" className="flex items-center space-x-2">
+              <Link href="tel:+27750461725" className="flex items-center space-x-2">
                 <Phone className="w-4 h-4" />
                 <span className="hidden sm:inline">Call Now</span>
               </Link>
