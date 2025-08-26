@@ -35,14 +35,14 @@ export default function ContactPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <TrackedButton
-                  href="tel:+27123456789"
+                  href="tel:+27750461725"
                   variant="default"
                   size="lg"
                   className="bg-primary hover:bg-primary/90"
                   eventName="phone_call_contact_hero"
                 >
                   <Phone className="w-5 h-5 mr-2" />
-                  Call Now: 012 345 6789
+                  Call Now: 075 046 1725
                 </TrackedButton>
                 <TrackedButton href="#contact-form" variant="outline" size="lg" eventName="scroll_to_form">
                   <MessageSquare className="w-5 h-5 mr-2" />
@@ -62,7 +62,7 @@ export default function ContactPage() {
                   <Phone className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="font-semibold text-lg mb-2">Phone</h3>
-                <p className="text-muted-foreground">012 345 6789</p>
+                <p className="text-muted-foreground">075 046 1725</p>
                 <p className="text-sm text-muted-foreground">Available 24/7</p>
               </div>
 
@@ -71,7 +71,7 @@ export default function ContactPage() {
                   <Mail className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="font-semibold text-lg mb-2">Email</h3>
-                <p className="text-muted-foreground">info@johannesburgtechrepair.online</p>
+                <p className="text-muted-foreground">info@fixmygadget.co.za</p>
                 <p className="text-sm text-muted-foreground">Response within 1 hour</p>
               </div>
 
