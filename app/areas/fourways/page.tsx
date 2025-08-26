@@ -25,31 +25,7 @@ export default function FourwaysRepairPage() {
       />
 
       {/* Header */}
-      <header className="border-b bg-white sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">JTR</span>
-            </div>
-            <span className="font-bold text-xl text-foreground">Johannesburg Tech Repair</span>
-          </Link>
-          <nav className="hidden md:flex items-center space-x-6">
-            <Link href="/#services" className="text-foreground hover:text-primary transition-colors">
-              Services
-            </Link>
-            <Link href="/#about" className="text-foreground hover:text-primary transition-colors">
-              About
-            </Link>
-            <Link href="/#contact" className="text-foreground hover:text-primary transition-colors">
-              Contact
-            </Link>
-            <Button className="bg-primary hover:bg-primary/90">
-              <Phone className="w-4 h-4 mr-2" />
-              Call Now
-            </Button>
-          </nav>
-        </div>
-      </header>
+     
 
       {/* Hero Section */}
       <section className="py-16 bg-gradient-to-br from-background to-card">
@@ -388,64 +364,7 @@ export default function FourwaysRepairPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-foreground text-background py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <Link href="/" className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                  <span className="text-primary-foreground font-bold text-sm">JTR</span>
-                </div>
-                <span className="font-bold text-lg">Johannesburg Tech Repair</span>
-              </Link>
-              <p className="text-sm opacity-80">
-                Family-friendly computer repair services in Fourways with same-day turnaround and warranty guarantee.
-              </p>
-            </div>
 
-            <div>
-              <h4 className="font-semibold mb-4">Fourways Areas</h4>
-              <ul className="space-y-2 text-sm opacity-80">
-                <li>Fourways</li>
-                <li>Lonehill</li>
-                <li>Dainfern</li>
-                <li>Broadacres</li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4">Family Services</h4>
-              <ul className="space-y-2 text-sm opacity-80">
-                <li>School Laptop Repair</li>
-                <li>Gaming Computer Setup</li>
-                <li>Home Office Support</li>
-                <li>Family Network Setup</li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4">Contact</h4>
-              <div className="space-y-2 text-sm opacity-80">
-                <div className="flex items-center gap-2">
-                  <Phone className="w-4 h-4" />
-                  (011) 123-4567
-                </div>
-                <div className="flex items-center gap-2">
-                  <span>info@johannesburgtechrepair.online</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4" />
-                  Serving all of Fourways
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t border-background/20 mt-8 pt-8 text-center text-sm opacity-60">
-            <p>&copy; 2024 Johannesburg Tech Repair. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }
