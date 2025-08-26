@@ -438,76 +438,7 @@ export default function SandtonRepairPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-foreground text-background py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <Link href="/" className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                  <span className="text-primary-foreground font-bold text-sm">JTR</span>
-                </div>
-                <span className="font-bold text-lg">Johannesburg Tech Repair</span>
-              </Link>
-              <p className="text-sm opacity-80">
-                Professional computer repair services in Sandton with same-day turnaround and warranty guarantee.
-              </p>
-            </div>
 
-            <div>
-              <h4 className="font-semibold mb-4">Sandton Areas</h4>
-              <ul className="space-y-2 text-sm opacity-80">
-                <li>Sandton CBD</li>
-                <li>Morningside</li>
-                <li>Bryanston</li>
-                <li>Hyde Park</li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4">Services</h4>
-              <ul className="space-y-2 text-sm opacity-80">
-                <li>
-                  <Link href="/services/laptop-repair" className="hover:text-primary transition-colors">
-                    Laptop Repair
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/computer-repair" className="hover:text-primary transition-colors">
-                    Computer Repair
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/virus-removal" className="hover:text-primary transition-colors">
-                    Virus Removal
-                  </Link>
-                </li>
-                <li>Data Recovery</li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4">Contact</h4>
-              <div className="space-y-2 text-sm opacity-80">
-                <div className="flex items-center gap-2">
-                  <Phone className="w-4 h-4" />
-                  (011) 123-4567
-                </div>
-                <div className="flex items-center gap-2">
-                  <span>info@johannesburgtechrepair.online</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4" />
-                  Serving all of Sandton
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t border-background/20 mt-8 pt-8 text-center text-sm opacity-60">
-            <p>&copy; 2024 Johannesburg Tech Repair. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }
