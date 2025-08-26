@@ -90,7 +90,7 @@ export function Footer() {
             <div className="space-y-3 text-sm">
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-cyan-400" />
-                <span className="text-gray-300">+27 12 345 6789</span>
+                <span className="text-gray-300">+27 75 046 1725</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-cyan-400" />
@@ -109,7 +109,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">© 2024 Johannesburg Tech Repair. All rights reserved.</p>
+          <p className="text-gray-400 text-sm">© 2025 Johannesburg Tech Repair. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="/privacy" className="text-gray-400 hover:text-white text-sm">
               Privacy Policy
