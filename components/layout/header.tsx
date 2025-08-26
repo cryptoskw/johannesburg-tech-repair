@@ -14,7 +14,7 @@ export function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-15 h-15 bg-cyan-600 rounded-lg flex items-center justify-center overflow-hidden">
+            <div className="w-15 h-8 bg-cyan-600 rounded-lg flex items-center justify-center overflow-hidden">
               <img src="/logo-JTR.png" alt="Johannesburg Tech Repair Logo" className="w-full h-full object-contain" />
             </div>
             <span className="font-bold text-xl text-gray-900">Johannesburg Tech Repair</span>
