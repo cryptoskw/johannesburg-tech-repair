@@ -1,330 +1,295 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { ArrowLeft, Wrench, Award, Users, Clock, Shield, Star } from "lucide-react"
-import Link from "next/link"
+import type { Metadata } from "next"
+import { MetaTags } from "@/components/seo/meta-tags"
+import { StructuredData } from "@/components/seo/structured-data"
+import { TrackedButton } from "@/components/ui/tracked-button"
+import { Shield, Users, Award, Clock, CheckCircle, Star } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "About Us - Johannesburg Tech Repair | Expert Computer & Laptop Repair",
+  description:
+    "Learn about Johannesburg Tech Repair - your trusted local experts for computer and laptop repairs. 10+ years experience, certified technicians, and 90-day warranty.",
+  keywords:
+    "about johannesburg tech repair, computer repair company, laptop repair experts, certified technicians johannesburg",
+}
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2">
-            <Wrench className="h-6 w-6 text-primary" />
-            <span className="font-bold text-xl">Johannesburg Tech Repair</span>
-          </Link>
-          <nav className="hidden md:flex items-center space-x-6">
-            <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">
-              Home
-            </Link>
-            <Link href="/services" className="text-sm font-medium hover:text-primary transition-colors">
-              Services
-            </Link>
-            <Link href="/contact" className="text-sm font-medium hover:text-primary transition-colors">
-              Contact
-            </Link>
-            <Button size="sm">Get Quote</Button>
-          </nav>
-        </div>
-      </header>
+    <>
+      <MetaTags
+        title="About Us - Johannesburg Tech Repair"
+        description="Learn about Johannesburg Tech Repair - your trusted local experts for computer and laptop repairs with 10+ years experience."
+        url="/about"
+      />
+      <StructuredData type="AboutPage" />
 
-      {/* Hero Section */}
-      <section className="py-20">
-        <div className="container">
-          <Link href="/" className="inline-flex items-center text-primary hover:underline mb-8">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Home
-          </Link>
-
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <Badge variant="secondary" className="w-fit">
-                About Our Company
-              </Badge>
-              <h1 className="text-4xl lg:text-5xl font-bold">Johannesburg's Most Trusted Tech Repair Experts</h1>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                With over 10 years of experience, we've built our reputation on quality repairs, honest service, and
-                customer satisfaction. From simple fixes to complex recoveries, we're here to get your technology
-                working perfectly again.
+      <div className="min-h-screen bg-background">
+        {/* Hero Section */}
+        <section className="bg-gradient-to-br from-primary/5 to-accent/5 py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center">
+              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Your Trusted Tech Repair Experts</h1>
+              <p className="text-xl text-muted-foreground mb-8">
+                Serving Johannesburg with professional computer and laptop repair services since 2014
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg">Get Free Quote</Button>
-                <Button variant="outline" size="lg">
-                  View Our Services
-                </Button>
-              </div>
-            </div>
-            <div className="relative">
-              <img
-                src="/professional-tech-repair-workshop-with-modern-equi.png"
-                alt="Our professional repair workshop"
-                className="rounded-lg shadow-2xl"
-              />
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Stats Section */}
-      <section className="py-20 bg-muted/50">
-        <div className="container">
-          <div className="grid md:grid-cols-4 gap-8">
-            {[
-              {
-                icon: Users,
-                stat: "5,000+",
-                label: "Happy Customers",
-              },
-              {
-                icon: Clock,
-                stat: "10+",
-                label: "Years Experience",
-              },
-              {
-                icon: Award,
-                stat: "95%",
-                label: "Success Rate",
-              },
-              {
-                icon: Shield,
-                stat: "90-Day",
-                label: "Warranty",
-              },
-            ].map((item, index) => (
-              <Card key={index} className="text-center">
-                <CardHeader>
-                  <item.icon className="h-12 w-12 text-primary mx-auto mb-4" />
-                  <CardTitle className="text-4xl font-bold text-primary">{item.stat}</CardTitle>
-                  <CardDescription className="text-lg font-medium">{item.label}</CardDescription>
-                </CardHeader>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Our Story */}
-      <section className="py-20">
-        <div className="container">
-          <div className="max-w-4xl mx-auto space-y-12">
-            <div className="text-center space-y-4">
-              <h2 className="text-3xl lg:text-4xl font-bold">Our Story</h2>
-              <p className="text-xl text-muted-foreground">How we became Johannesburg's leading tech repair service</p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6">
-                <h3 className="text-2xl font-bold">Founded on Trust & Quality</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Started in 2014 by a team of passionate technicians, Johannesburg Tech Repair was born from a simple
-                  mission: provide honest, reliable, and affordable tech repair services to our community.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  What began as a small workshop has grown into Johannesburg's most trusted repair service, handling
-                  everything from simple screen replacements to complex data recovery operations.
-                </p>
-              </div>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Our Mission</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    To provide fast, reliable, and affordable tech repair services while building lasting relationships
-                    with our customers through honest communication and quality workmanship.
+        {/* Our Story */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                  <h2 className="text-3xl font-bold mb-6">Our Story</h2>
+                  <p className="text-muted-foreground mb-4">
+                    Founded in 2014, Johannesburg Tech Repair began as a small family business with a simple mission: to
+                    provide honest, reliable, and affordable tech repair services to the people of Johannesburg.
                   </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-20 bg-muted/50">
-        <div className="container">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold">Meet Our Expert Team</h2>
-            <p className="text-xl text-muted-foreground">Certified technicians with years of experience</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Michael Johnson",
-                role: "Lead Technician & Owner",
-                experience: "12+ Years Experience",
-                specialties: ["Computer Repair", "Data Recovery", "Network Setup"],
-                image: "/professional-male-technician-with-computer-repair-.png",
-              },
-              {
-                name: "Sarah Williams",
-                role: "Mobile Device Specialist",
-                experience: "8+ Years Experience",
-                specialties: ["iPhone Repair", "Android Repair", "Tablet Repair"],
-                image: "/professional-female-technician-working-on-mobile-d.png",
-              },
-              {
-                name: "David Chen",
-                role: "Data Recovery Expert",
-                experience: "10+ Years Experience",
-                specialties: ["Hard Drive Recovery", "SSD Repair", "RAID Systems"],
-                image: "/placeholder-ykal2.png",
-              },
-            ].map((member, index) => (
-              <Card key={index}>
-                <CardHeader className="text-center">
-                  <img
-                    src={member.image || "/placeholder.svg"}
-                    alt={member.name}
-                    className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
-                  />
-                  <CardTitle className="text-xl">{member.name}</CardTitle>
-                  <CardDescription className="text-base font-medium text-primary">{member.role}</CardDescription>
-                  <Badge variant="secondary">{member.experience}</Badge>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
-                    <h4 className="font-semibold text-sm">Specialties:</h4>
-                    <div className="flex flex-wrap gap-1">
-                      {member.specialties.map((specialty, i) => (
-                        <Badge key={i} variant="outline" className="text-xs">
-                          {specialty}
-                        </Badge>
-                      ))}
+                  <p className="text-muted-foreground mb-4">
+                    What started as a one-person operation has grown into Johannesburg's most trusted tech repair
+                    service, with thousands of satisfied customers and a reputation built on quality workmanship and
+                    exceptional customer service.
+                  </p>
+                  <p className="text-muted-foreground">
+                    Today, we continue to uphold the same values that founded our company: integrity, expertise, and a
+                    genuine commitment to helping our customers get back to what matters most.
+                  </p>
+                </div>
+                <div className="bg-muted/50 p-8 rounded-lg">
+                  <div className="grid grid-cols-2 gap-6 text-center">
+                    <div>
+                      <div className="text-3xl font-bold text-primary mb-2">10+</div>
+                      <div className="text-sm text-muted-foreground">Years Experience</div>
+                    </div>
+                    <div>
+                      <div className="text-3xl font-bold text-primary mb-2">5000+</div>
+                      <div className="text-sm text-muted-foreground">Repairs Completed</div>
+                    </div>
+                    <div>
+                      <div className="text-3xl font-bold text-primary mb-2">98%</div>
+                      <div className="text-sm text-muted-foreground">Success Rate</div>
+                    </div>
+                    <div>
+                      <div className="text-3xl font-bold text-primary mb-2">24/7</div>
+                      <div className="text-sm text-muted-foreground">Support Available</div>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="py-20">
-        <div className="container">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold">Why Customers Choose Us</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              The values and principles that make us Johannesburg's preferred tech repair service
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Shield,
-                title: "Guaranteed Quality",
-                description: "90-day warranty on all repairs with genuine parts and professional workmanship",
-              },
-              {
-                icon: Clock,
-                title: "Fast Turnaround",
-                description: "Most repairs completed within 24-48 hours, with same-day service available",
-              },
-              {
-                icon: Award,
-                title: "Expert Technicians",
-                description: "Certified professionals with 10+ years experience in all major brands",
-              },
-              {
-                icon: Users,
-                title: "Customer First",
-                description: "Honest pricing, clear communication, and personalized service for every customer",
-              },
-              {
-                icon: Star,
-                title: "Proven Track Record",
-                description: "5,000+ satisfied customers and 95% success rate across all repair types",
-              },
-              {
-                icon: Wrench,
-                title: "Full Service Shop",
-                description: "Complete repair facility with advanced tools and genuine replacement parts",
-              },
-            ].map((feature, index) => (
-              <Card key={index} className="text-center">
-                <CardHeader>
-                  <feature.icon className="h-12 w-12 text-primary mx-auto mb-4" />
-                  <CardTitle className="text-xl">{feature.title}</CardTitle>
-                  <CardDescription className="text-base">{feature.description}</CardDescription>
-                </CardHeader>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-primary text-primary-foreground">
-        <div className="container text-center space-y-6">
-          <h2 className="text-3xl lg:text-4xl font-bold">Experience the Difference</h2>
-          <p className="text-xl opacity-90 max-w-2xl mx-auto">
-            Join thousands of satisfied customers who trust us with their tech repair needs
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="text-lg px-8">
-              Get Free Quote
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="text-lg px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
-            >
-              Visit Our Workshop
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-muted py-12">
-        <div className="container">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="space-y-4">
-              <div className="flex items-center space-x-2">
-                <Wrench className="h-6 w-6 text-primary" />
-                <span className="font-bold text-xl">Johannesburg Tech Repair</span>
+                </div>
               </div>
-              <p className="text-muted-foreground">Professional computer and device repair services in Johannesburg.</p>
-            </div>
-
-            <div className="space-y-4">
-              <h4 className="font-semibold">Services</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>Computer Repair</li>
-                <li>Mobile Repair</li>
-                <li>Data Recovery</li>
-                <li>Network Setup</li>
-              </ul>
-            </div>
-
-            <div className="space-y-4">
-              <h4 className="font-semibold">Contact</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>+27 11 123 4567</li>
-                <li>info@johannesburgtechrepair.online</li>
-                <li>123 Main Street, Johannesburg</li>
-              </ul>
-            </div>
-
-            <div className="space-y-4">
-              <h4 className="font-semibold">Hours</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>Mon-Fri: 8AM-6PM</li>
-                <li>Saturday: 9AM-4PM</li>
-                <li>Sunday: Closed</li>
-              </ul>
             </div>
           </div>
+        </section>
 
-          <div className="border-t mt-8 pt-8 text-center text-sm text-muted-foreground">
-            <p>&copy; 2024 Johannesburg Tech Repair. All rights reserved.</p>
+        {/* Our Values */}
+        <section className="bg-muted/50 py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <h2 className="text-3xl font-bold text-center mb-12">What Sets Us Apart</h2>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="text-center">
+                  <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Shield className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="font-semibold text-lg mb-2">Trusted & Reliable</h3>
+                  <p className="text-muted-foreground text-sm">
+                    Licensed, insured, and committed to honest business practices with transparent pricing.
+                  </p>
+                </div>
+
+                <div className="text-center">
+                  <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Users className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="font-semibold text-lg mb-2">Expert Technicians</h3>
+                  <p className="text-muted-foreground text-sm">
+                    Certified professionals with extensive experience in all major brands and operating systems.
+                  </p>
+                </div>
+
+                <div className="text-center">
+                  <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Award className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="font-semibold text-lg mb-2">Quality Guarantee</h3>
+                  <p className="text-muted-foreground text-sm">
+                    90-day warranty on all repairs and a no-fix-no-fee policy for your peace of mind.
+                  </p>
+                </div>
+
+                <div className="text-center">
+                  <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Clock className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="font-semibold text-lg mb-2">Fast Turnaround</h3>
+                  <p className="text-muted-foreground text-sm">
+                    Same-day service for most repairs with free pickup and delivery in Johannesburg.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </footer>
-    </div>
+        </section>
+
+        {/* Services Overview */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center mb-12">
+              <h2 className="text-3xl font-bold mb-6">Our Expertise</h2>
+              <p className="text-muted-foreground">
+                We specialize in comprehensive tech repair services for both individuals and businesses
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="bg-card border rounded-lg p-6">
+                <h3 className="font-semibold text-lg mb-3">Laptop Repair</h3>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-primary mr-2" />
+                    Screen replacements
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-primary mr-2" />
+                    Keyboard repairs
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-primary mr-2" />
+                    Battery replacements
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-primary mr-2" />
+                    Motherboard repairs
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-card border rounded-lg p-6">
+                <h3 className="font-semibold text-lg mb-3">Computer Repair</h3>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-primary mr-2" />
+                    Hardware diagnostics
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-primary mr-2" />
+                    Component upgrades
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-primary mr-2" />
+                    System optimization
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-primary mr-2" />
+                    Custom builds
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-card border rounded-lg p-6">
+                <h3 className="font-semibold text-lg mb-3">Data & Security</h3>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-primary mr-2" />
+                    Virus removal
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-primary mr-2" />
+                    Data recovery
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-primary mr-2" />
+                    Security setup
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 text-primary mr-2" />
+                    Backup solutions
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Customer Testimonials */}
+        <section className="bg-muted/50 py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center mb-12">
+              <h2 className="text-3xl font-bold mb-6">What Our Customers Say</h2>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="bg-card border rounded-lg p-6">
+                <div className="flex items-center mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground mb-4">
+                  "Excellent service! They fixed my laptop screen the same day and the price was very reasonable. Highly
+                  recommend for anyone needing tech repairs in Johannesburg."
+                </p>
+                <div className="font-semibold">Sarah M.</div>
+                <div className="text-sm text-muted-foreground">Sandton</div>
+              </div>
+
+              <div className="bg-card border rounded-lg p-6">
+                <div className="flex items-center mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground mb-4">
+                  "Professional and trustworthy. They recovered all my important files when my hard drive crashed. The
+                  90-day warranty gave me peace of mind."
+                </p>
+                <div className="font-semibold">David K.</div>
+                <div className="text-sm text-muted-foreground">Rosebank</div>
+              </div>
+
+              <div className="bg-card border rounded-lg p-6">
+                <div className="flex items-center mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground mb-4">
+                  "Fast, reliable, and honest pricing. They explained everything clearly and had my computer running
+                  like new. Will definitely use them again."
+                </p>
+                <div className="font-semibold">Lisa R.</div>
+                <div className="text-sm text-muted-foreground">Fourways</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-2xl mx-auto text-center">
+              <h2 className="text-3xl font-bold mb-6">Ready to Get Started?</h2>
+              <p className="text-muted-foreground mb-8">
+                Experience the difference that expert tech repair can make. Contact us today for your free quote.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <TrackedButton
+                  href="tel:+27123456789"
+                  variant="default"
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90"
+                  eventName="phone_call_about_cta"
+                >
+                  Call Now: 012 345 6789
+                </TrackedButton>
+                <TrackedButton href="/contact" variant="outline" size="lg" eventName="contact_page_about_cta">
+                  Get Free Quote
+                </TrackedButton>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </>
   )
 }

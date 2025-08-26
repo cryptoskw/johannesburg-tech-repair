@@ -1,535 +1,427 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import {
-  Phone,
-  Mail,
-  MapPin,
-  Clock,
-  Star,
-  Smartphone,
-  Monitor,
-  HardDrive,
-  Wifi,
-  Shield,
-  CheckCircle,
-  Award,
-  Users,
-  Zap,
-} from "lucide-react"
+import { Clock, Shield, Truck, CheckCircle, Star, Laptop, Monitor, ShieldCheck } from "lucide-react"
+import { LocalBusinessSchema } from "@/components/seo/structured-data"
+import { PhoneButton } from "@/components/ui/phone-button"
+import { TrackedButton } from "@/components/ui/tracked-button"
 import Link from "next/link"
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-background backdrop-blur supports-[backdrop-filter]:bg-background/95">
-        <div className="container flex h-16 items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <div className="bg-black text-white p-2 rounded-lg">
-              <span className="font-bold text-lg">JTR</span>
-            </div>
-            <span className="font-bold text-xl text-foreground">Johannesburg Tech Repair</span>
-          </div>
-          <nav className="hidden md:flex items-center space-x-6">
-            <Link href="/services" className="text-sm font-medium text-foreground hover:text-black transition-colors">
-              Services
-            </Link>
-            <Link href="/about" className="text-sm font-medium text-foreground hover:text-black transition-colors">
-              About
-            </Link>
-            <Link href="/pricing" className="text-sm font-medium text-foreground hover:text-black transition-colors">
-              Pricing
-            </Link>
-            <Link href="/contact" className="text-sm font-medium text-foreground hover:text-black transition-colors">
-              Contact
-            </Link>
-            <Button size="sm" className="bg-black text-white hover:bg-gray-800">
-              Get Quote
-            </Button>
-          </nav>
-        </div>
-      </header>
+      <LocalBusinessSchema
+        name="Johannesburg Tech Repair"
+        description="Professional computer and laptop repair services in Johannesburg with same-day turnaround, 90-day warranty, and free pickup & delivery."
+        address={{
+          addressLocality: "Johannesburg",
+          addressRegion: "Gauteng",
+          addressCountry: "ZA",
+        }}
+        telephone="(011) 123-4567"
+        email="info@johannesburgtechrepair.online"
+        url="https://johannesburgtechrepair.online"
+        serviceArea={["Johannesburg", "Sandton", "Rosebank", "Fourways", "Randburg"]}
+        services={[
+          "Laptop Repair",
+          "Computer Repair",
+          "Virus Removal",
+          "Data Recovery",
+          "Screen Replacement",
+          "Hardware Upgrades",
+        ]}
+      />
 
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-background">
-        <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <Badge variant="secondary" className="w-fit bg-black text-white">
-                ⭐ #1 Rated Tech Repair in Johannesburg
-              </Badge>
-              <h1 className="text-4xl lg:text-6xl font-bold tracking-tight">
-                Expert Computer Repair Services in
-                <span className="text-black"> Johannesburg</span>
-              </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                Professional laptop repair, desktop repair, phone repair & IT support with same-day service. Certified
-                technicians, 90-day warranty, and unbeatable prices. Serving all of Johannesburg since 2015.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="text-lg px-8 bg-black hover:bg-gray-800 text-white">
-                  <Phone className="mr-2 h-5 w-5" />
-                  Call 075 046 1725
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="text-lg px-8 border-black text-black hover:bg-black hover:text-white bg-transparent"
-                >
-                  Get Free Diagnosis
-                </Button>
+      <section className="py-20 bg-gradient-to-br from-background to-card">
+        <div className="container mx-auto px-4 text-center">
+          <Badge className="mb-6 bg-accent text-accent-foreground">Johannesburg's #1 Tech Repair Experts</Badge>
+          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
+            Your Trusted Tech Repair
+            <span className="text-primary block">Experts in Johannesburg</span>
+          </h1>
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
+            Professional computer and laptop repair services with same-day turnaround, 90-day warranty, and free pickup
+            & delivery across{" "}
+            <Link href="/areas/sandton" className="text-primary hover:underline">
+              Sandton
+            </Link>
+            ,{" "}
+            <Link href="/areas/rosebank" className="text-primary hover:underline">
+              Rosebank
+            </Link>
+            , and{" "}
+            <Link href="/areas/fourways" className="text-primary hover:underline">
+              Fourways
+            </Link>
+            .
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <TrackedButton
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-lg px-8 py-4"
+              eventName="quote_request"
+              eventLabel="Hero CTA - Book Free Diagnosis"
+              asChild
+            >
+              <Link href="/contact">Book Free Diagnosis</Link>
+            </TrackedButton>
+            <PhoneButton
+              phoneNumber="(011) 123-4567"
+              size="lg"
+              className="text-lg px-8 py-4 bg-transparent border border-input hover:bg-accent hover:text-accent-foreground"
+            >
+              Call (011) 123-4567
+            </PhoneButton>
+          </div>
+
+          <div className="mb-12">
+            <img
+              src="/professional-tech-repair-workshop-with-computers-a.png"
+              alt="Professional tech repair workshop in Johannesburg"
+              className="mx-auto rounded-lg shadow-lg max-w-full h-auto"
+            />
+          </div>
+
+          {/* Trust Signals */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            <div className="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm border">
+              <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mb-3">
+                <Shield className="w-6 h-6 text-accent" />
               </div>
-              <div className="grid grid-cols-2 gap-4 text-sm">
-                <div className="flex items-center text-muted-foreground">
-                  <CheckCircle className="mr-2 h-4 w-4 text-black" />
-                  Same Day Repairs Available
-                </div>
-                <div className="flex items-center text-muted-foreground">
-                  <CheckCircle className="mr-2 h-4 w-4 text-black" />
-                  90-Day Parts & Labor Warranty
-                </div>
-                <div className="flex items-center text-muted-foreground">
-                  <CheckCircle className="mr-2 h-4 w-4 text-black" />
-                  Free Pickup & Delivery
-                </div>
-                <div className="flex items-center text-muted-foreground">
-                  <CheckCircle className="mr-2 h-4 w-4 text-black" />
-                  No Fix, No Fee Guarantee
-                </div>
-              </div>
+              <h3 className="font-semibold text-foreground mb-1">90-Day Warranty</h3>
+              <p className="text-sm text-muted-foreground text-center">All repairs guaranteed</p>
             </div>
-            <div className="relative">
-              <img
-                src="/professional-tech-repair-workshop-with-modern-equi.png"
-                alt="Professional computer repair technician fixing laptop in modern Johannesburg workshop"
-                className="rounded-lg shadow-xl border border-gray-200"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg border border-gray-200">
-                <div className="flex items-center space-x-2">
-                  <Award className="h-6 w-6 text-black" />
-                  <div>
-                    <div className="font-semibold text-sm">Certified Technicians</div>
-                    <div className="text-xs text-muted-foreground">Microsoft & CompTIA Certified</div>
-                  </div>
-                </div>
+            <div className="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm border">
+              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                <Clock className="w-6 h-6 text-primary" />
               </div>
-              <div className="absolute -top-6 -right-6 bg-white p-4 rounded-lg shadow-lg border border-gray-200">
-                <div className="flex items-center space-x-2">
-                  <Users className="h-6 w-6 text-black" />
-                  <div>
-                    <div className="font-semibold text-sm">5000+ Happy Customers</div>
-                    <div className="text-xs text-muted-foreground">4.9/5 Average Rating</div>
-                  </div>
-                </div>
+              <h3 className="font-semibold text-foreground mb-1">Same-Day Repairs</h3>
+              <p className="text-sm text-muted-foreground text-center">Most issues fixed today</p>
+            </div>
+            <div className="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm border">
+              <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mb-3">
+                <Truck className="w-6 h-6 text-accent" />
               </div>
+              <h3 className="font-semibold text-foreground mb-1">Free Pickup</h3>
+              <p className="text-sm text-muted-foreground text-center">& delivery service</p>
+            </div>
+            <div className="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm border">
+              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+                <CheckCircle className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="font-semibold text-foreground mb-1">No-Fix, No-Fee</h3>
+              <p className="text-sm text-muted-foreground text-center">Pay only if we fix it</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-12 bg-black text-white">
-        <div className="container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-3xl font-bold">5000+</div>
-              <div className="text-sm opacity-90">Devices Repaired</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold">24hr</div>
-              <div className="text-sm opacity-90">Average Turnaround</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold">98%</div>
-              <div className="text-sm opacity-90">Success Rate</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold">9 Years</div>
-              <div className="text-sm opacity-90">In Business</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section id="services" className="py-20 bg-gray-50">
-        <div className="container">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold">Complete Tech Repair Services in Johannesburg</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              From laptop screen replacement to data recovery, we handle all computer and mobile device repairs with
-              expert precision and guaranteed results.
+      {/* Services Preview */}
+      <section id="services" className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Expert Repair Services</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              From hardware repairs to virus removal, we handle all your tech problems with expertise and care.
+              <Link href="/about" className="text-primary hover:underline ml-1">
+                Learn more about our team
+              </Link>
+              .
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Monitor,
-                title: "Laptop & Desktop Repair",
-                description:
-                  "Screen replacement, motherboard repair, hardware upgrades, virus removal, performance optimization",
-                price: "From R299",
-                popular: true,
-                image: "/professional-male-technician-with-computer-repair-.png",
-              },
-              {
-                icon: Smartphone,
-                title: "Mobile Phone Repair",
-                description:
-                  "iPhone & Android screen repair, battery replacement, water damage recovery, charging port fixes",
-                price: "From R199",
-                popular: false,
-                image: "/professional-female-technician-working-on-mobile-d.png",
-              },
-              {
-                icon: HardDrive,
-                title: "Data Recovery Services",
-                description: "Professional data recovery from crashed hard drives, SSDs, USB drives, and memory cards",
-                price: "From R499",
-                popular: false,
-                image: "/data-recovery-hard-drive-repair.png",
-              },
-              {
-                icon: Wifi,
-                title: "Network & WiFi Setup",
-                description:
-                  "Business network installation, WiFi troubleshooting, router configuration, security setup",
-                price: "From R399",
-                popular: false,
-                image: "/network-setup-wifi-installation.png",
-              },
-              {
-                icon: Shield,
-                title: "Virus & Malware Removal",
-                description: "Complete system cleanup, malware removal, antivirus installation, security optimization",
-                price: "From R249",
-                popular: false,
-                image: "/computer-security-virus-removal.png",
-              },
-              {
-                icon: Zap,
-                title: "Hardware Upgrades",
-                description: "RAM upgrades, SSD installation, graphics card upgrades, performance enhancement",
-                price: "From R199",
-                popular: false,
-                image: "/computer-hardware-upgrade-installation.png",
-              },
-            ].map((service, index) => (
-              <Card
-                key={index}
-                className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 relative bg-white border border-gray-200"
-              >
-                {service.popular && <Badge className="absolute -top-2 left-4 bg-black text-white">Most Popular</Badge>}
-                <div className="h-48 overflow-hidden rounded-t-lg">
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <div className="mb-4">
                   <img
-                    src={service.image || "/placeholder.svg"}
-                    alt={`${service.title} service`}
-                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300"
+                    src="/laptop-repair-service-with-broken-screen-being-fix.png"
+                    alt="Laptop repair services"
+                    className="w-full h-32 object-cover rounded-lg mb-4"
                   />
-                </div>
-                <CardHeader>
-                  <service.icon className="h-12 w-12 text-black mb-4" />
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
-                  <CardDescription className="text-base leading-relaxed">{service.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold text-black">{service.price}</span>
-                    <Button
-                      variant="outline"
-                      className="border-black text-black hover:bg-black hover:text-white bg-transparent"
-                    >
-                      Get Quote
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-20">
-        <div className="container">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold">Why Johannesburg Trusts Us With Their Tech</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              We're not just another repair shop - we're your trusted technology partners
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Award,
-                title: "Certified Experts",
-                description:
-                  "Microsoft, CompTIA, and Apple certified technicians with 10+ years experience in computer repair",
-                stat: "Certified Pros",
-              },
-              {
-                icon: Zap,
-                title: "Lightning Fast Service",
-                description: "Most repairs completed same-day or within 24 hours. We know your time is valuable",
-                stat: "Same Day",
-              },
-              {
-                icon: Shield,
-                title: "Unbeatable Warranty",
-                description: "90-day comprehensive warranty on all repairs and parts. We stand behind our work",
-                stat: "90 Day Warranty",
-              },
-            ].map((feature, index) => (
-              <Card
-                key={index}
-                className="text-center hover:shadow-lg transition-shadow bg-white border border-gray-200"
-              >
-                <CardHeader>
-                  <feature.icon className="h-16 w-16 text-black mx-auto mb-4" />
-                  <CardTitle className="text-2xl font-bold text-black mb-2">{feature.stat}</CardTitle>
-                  <CardTitle className="text-xl">{feature.title}</CardTitle>
-                  <CardDescription className="text-base leading-relaxed">{feature.description}</CardDescription>
-                </CardHeader>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Real Reviews Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold">Real Reviews From Real Customers</h2>
-            <p className="text-xl text-muted-foreground">
-              See why we're Johannesburg's most trusted tech repair service
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Sarah Mitchell",
-                location: "Sandton Business District",
-                rating: 5,
-                review:
-                  "My MacBook Pro screen was completely shattered. They replaced it in 4 hours and it looks brand new! Professional service and fair pricing. Will definitely use them again.",
-                service: "Laptop Screen Repair",
-              },
-              {
-                name: "David Kruger",
-                location: "Rosebank",
-                rating: 5,
-                review:
-                  "Thought I lost 5 years of family photos when my hard drive crashed. These guys recovered EVERYTHING! They're miracle workers. Worth every penny.",
-                service: "Data Recovery",
-              },
-              {
-                name: "Lisa Patel",
-                location: "Fourways",
-                rating: 5,
-                review:
-                  "My business laptop was running so slow I was ready to buy a new one. After their tune-up service, it's faster than when I first bought it. Saved me thousands!",
-                service: "Performance Optimization",
-              },
-            ].map((testimonial, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow bg-white border border-gray-200">
-                <CardHeader>
-                  <div className="flex items-center space-x-1 mb-2">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-black text-black" />
-                    ))}
-                  </div>
-                  <Badge variant="outline" className="w-fit mb-2 border-black text-black">
-                    {testimonial.service}
-                  </Badge>
-                  <CardDescription className="text-base italic leading-relaxed">"{testimonial.review}"</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="font-semibold">{testimonial.name}</div>
-                  <div className="text-sm text-muted-foreground">{testimonial.location}</div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Map Section */}
-      <section className="py-20">
-        <div className="container">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold">Find Us in Johannesburg</h2>
-            <p className="text-xl text-muted-foreground">
-              Conveniently located in the heart of Johannesburg with easy access and free parking
-            </p>
-          </div>
-
-          <div className="bg-gray-100 h-96 rounded-lg border border-gray-200 flex items-center justify-center">
-            <div className="text-center">
-              <MapPin className="h-16 w-16 text-black mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-2">123 Main Street, Johannesburg CBD</h3>
-              <p className="text-muted-foreground">Interactive map will be embedded here</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gray-50">
-        <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div className="space-y-6">
-              <h2 className="text-3xl lg:text-4xl font-bold">Get Your Device Fixed Today</h2>
-              <p className="text-xl text-muted-foreground">
-                Emergency repairs available 24/7. Free diagnosis and pickup service in Johannesburg area.
-              </p>
-
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <Phone className="h-5 w-5 text-black" />
-                  <div>
-                    <span className="text-lg font-semibold">075 046 1725</span>
-                    <div className="text-sm text-muted-foreground">24/7 Emergency Line</div>
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <Laptop className="w-6 h-6 text-primary" />
                   </div>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <Mail className="h-5 w-5 text-black" />
-                  <span className="text-lg">info@fixmygaget.co.za</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <MapPin className="h-5 w-5 text-black" />
-                  <div>
-                    <span className="text-lg">123 Main Street, Johannesburg CBD</span>
-                    <div className="text-sm text-muted-foreground">Free parking available</div>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Clock className="h-5 w-5 text-black" />
-                  <div>
-                    <span className="text-lg">Mon-Fri: 8AM-6PM, Sat: 9AM-4PM</span>
-                    <div className="text-sm text-muted-foreground">Emergency service available 24/7</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white p-4 rounded-lg border border-gray-200">
-                <h4 className="font-semibold mb-2">Service Areas:</h4>
-                <p className="text-sm text-muted-foreground">
-                  Sandton, Rosebank, Fourways, Randburg, Midrand, Roodepoort, Soweto, Johannesburg CBD, and surrounding
-                  areas
+                <h3 className="text-xl font-semibold text-foreground mb-2">Laptop Repair</h3>
+                <p className="text-muted-foreground mb-4">
+                  Screen replacement, keyboard repair, battery issues, and more. We service all major brands including
+                  Dell, HP, Lenovo, and Apple.
                 </p>
-              </div>
-            </div>
+                <TrackedButton
+                  variant="outline"
+                  className="w-full bg-transparent"
+                  eventName="service_interest"
+                  eventLabel="Laptop Repair"
+                  asChild
+                >
+                  <Link href="/services/laptop-repair">Learn More</Link>
+                </TrackedButton>
+              </CardContent>
+            </Card>
 
-            <Card className="bg-white border border-gray-200">
-              <CardHeader>
-                <CardTitle>Get Free Quote</CardTitle>
-                <CardDescription>Tell us about your device issue</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-sm font-medium">Name</label>
-                    <input
-                      className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-black focus:border-black bg-white"
-                      placeholder="Your name"
-                    />
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium">Phone</label>
-                    <input
-                      className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-black focus:border-black bg-white"
-                      placeholder="Your phone"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label className="text-sm font-medium">Email</label>
-                  <input
-                    className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-black focus:border-black bg-white"
-                    placeholder="Your email"
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <div className="mb-4">
+                  <img
+                    src="/desktop-computer-repair-with-motherboard-and-compo.png"
+                    alt="Computer repair services"
+                    className="w-full h-32 object-cover rounded-lg mb-4"
                   />
+                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                    <Monitor className="w-6 h-6 text-accent" />
+                  </div>
                 </div>
-                <div>
-                  <label className="text-sm font-medium">Device Type</label>
-                  <select className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-black focus:border-black bg-white">
-                    <option>Select device type</option>
-                    <option>Laptop</option>
-                    <option>Desktop</option>
-                    <option>Smartphone</option>
-                    <option>Tablet</option>
-                    <option>Other</option>
-                  </select>
+                <h3 className="text-xl font-semibold text-foreground mb-2">Computer Repair</h3>
+                <p className="text-muted-foreground mb-4">
+                  Hardware diagnostics, component replacement, performance optimization. Serving businesses and homes
+                  across{" "}
+                  <Link href="/areas/sandton" className="text-primary hover:underline">
+                    Sandton
+                  </Link>{" "}
+                  and surrounding areas.
+                </p>
+                <TrackedButton
+                  variant="outline"
+                  className="w-full bg-transparent"
+                  eventName="service_interest"
+                  eventLabel="Computer Repair"
+                  asChild
+                >
+                  <Link href="/services/computer-repair">Learn More</Link>
+                </TrackedButton>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <div className="mb-4">
+                  <img
+                    src="/computer-security-virus-removal-antivirus-software.png"
+                    alt="Virus removal services"
+                    className="w-full h-32 object-cover rounded-lg mb-4"
+                  />
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <ShieldCheck className="w-6 h-6 text-primary" />
+                  </div>
                 </div>
-                <div>
-                  <label className="text-sm font-medium">Issue Description</label>
-                  <textarea
-                    className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md h-24 focus:ring-2 focus:ring-black focus:border-black bg-white"
-                    placeholder="Describe the problem..."
-                  ></textarea>
-                </div>
-                <Button className="w-full bg-black hover:bg-gray-800 text-white">Get Free Quote</Button>
+                <h3 className="text-xl font-semibold text-foreground mb-2">Virus Removal</h3>
+                <p className="text-muted-foreground mb-4">
+                  Complete malware removal and system security optimization. We also provide ongoing security advice to
+                  prevent future infections.
+                </p>
+                <TrackedButton
+                  variant="outline"
+                  className="w-full bg-transparent"
+                  eventName="service_interest"
+                  eventLabel="Virus Removal"
+                  asChild
+                >
+                  <Link href="/services/virus-removal">Learn More</Link>
+                </TrackedButton>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-muted-foreground mb-4">
+              We also offer{" "}
+              <Link href="/services/data-recovery" className="text-primary hover:underline">
+                data recovery
+              </Link>
+              , hardware upgrades, and{" "}
+              <Link href="/contact" className="text-primary hover:underline">
+                same-day IT support
+              </Link>{" "}
+              for businesses.
+            </p>
+            <TrackedButton variant="outline" eventName="view_all_services" eventLabel="View All Services" asChild>
+              <Link href="/services">View All Services</Link>
+            </TrackedButton>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-card">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Service Areas Across Johannesburg</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              We provide free pickup and delivery across all major Johannesburg areas
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <img
+                  src="/sandton-business-district-skyline-johannesburg.png"
+                  alt="Sandton area"
+                  className="w-full h-24 object-cover rounded-lg mb-4"
+                />
+                <h3 className="text-xl font-semibold text-foreground mb-2">Sandton</h3>
+                <p className="text-muted-foreground mb-4">
+                  Serving the business hub with corporate IT support and personal device repairs.
+                </p>
+                <Link href="/areas/sandton" className="text-primary hover:underline">
+                  Learn about Sandton services →
+                </Link>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <img
+                  src="/rosebank-shopping-area-johannesburg.png"
+                  alt="Rosebank area"
+                  className="w-full h-24 object-cover rounded-lg mb-4"
+                />
+                <h3 className="text-xl font-semibold text-foreground mb-2">Rosebank</h3>
+                <p className="text-muted-foreground mb-4">
+                  Quick repairs for residents and businesses in the Rosebank area.
+                </p>
+                <Link href="/areas/rosebank" className="text-primary hover:underline">
+                  Learn about Rosebank services →
+                </Link>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <img
+                  src="/fourways-residential-area-johannesburg.png"
+                  alt="Fourways area"
+                  className="w-full h-24 object-cover rounded-lg mb-4"
+                />
+                <h3 className="text-xl font-semibold text-foreground mb-2">Fourways</h3>
+                <p className="text-muted-foreground mb-4">
+                  Family-friendly tech support for the growing Fourways community.
+                </p>
+                <Link href="/areas/fourways" className="text-primary hover:underline">
+                  Learn about Fourways services →
+                </Link>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-black text-white py-12">
-        <div className="container">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="space-y-4">
-              <div className="flex items-center space-x-2">
-                <div className="bg-white text-black p-2 rounded-lg">
-                  <span className="font-bold text-lg">JTR</span>
-                </div>
-                <span className="font-bold text-xl">Johannesburg Tech Repair</span>
-              </div>
-              <p className="text-gray-300">Professional computer and device repair services in Johannesburg.</p>
-            </div>
-
-            <div className="space-y-4">
-              <h4 className="font-semibold">Services</h4>
-              <ul className="space-y-2 text-sm text-gray-300">
-                <li>Laptop Repair</li>
-                <li>Desktop Repair</li>
-                <li>Mobile Phone Repair</li>
-                <li>Data Recovery</li>
-                <li>Network Setup</li>
-                <li>Virus Removal</li>
-                <li>Hardware Upgrades</li>
-              </ul>
-            </div>
-
-            <div className="space-y-4">
-              <h4 className="font-semibold">Contact</h4>
-              <ul className="space-y-2 text-sm text-gray-300">
-                <li>075 046 1725</li>
-                <li>info@fixmygaget.co.za</li>
-                <li>123 Main Street, Johannesburg CBD</li>
-              </ul>
-            </div>
-
-            <div className="space-y-4">
-              <h4 className="font-semibold">Hours</h4>
-              <ul className="space-y-2 text-sm text-gray-300">
-                <li>Mon-Fri: 8AM-6PM</li>
-                <li>Saturday: 9AM-4PM</li>
-                <li>Sunday: Closed</li>
-              </ul>
+      {/* Testimonials */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">What Our Customers Say</h2>
+            <div className="flex items-center justify-center gap-1 mb-4">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+              ))}
+              <span className="ml-2 text-muted-foreground">4.9/5 from 200+ reviews</span>
             </div>
           </div>
 
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
-            <p>&copy; 2024 Johannesburg Tech Repair. All rights reserved.</p>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card>
+              <CardContent className="p-6">
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground mb-4">
+                  "Excellent service! They fixed my laptop screen the same day and the warranty gave me peace of mind.
+                  The{" "}
+                  <Link href="/services/laptop-repair" className="text-primary hover:underline">
+                    laptop repair service
+                  </Link>{" "}
+                  was professional and affordable."
+                </p>
+                <div className="font-semibold text-foreground">Sarah M.</div>
+                <div className="text-sm text-muted-foreground">
+                  <Link href="/areas/sandton" className="hover:underline">
+                    Sandton
+                  </Link>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground mb-4">
+                  "Professional and honest. They diagnosed the issue quickly and the free pickup service was convenient.
+                  Highly recommend their{" "}
+                  <Link href="/services/computer-repair" className="text-primary hover:underline">
+                    computer repair
+                  </Link>{" "}
+                  services."
+                </p>
+                <div className="font-semibold text-foreground">Michael K.</div>
+                <div className="text-sm text-muted-foreground">
+                  <Link href="/areas/rosebank" className="hover:underline">
+                    Rosebank
+                  </Link>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground mb-4">
+                  "Best tech repair in Joburg! Fixed my computer virus issue and it's running like new. Their{" "}
+                  <Link href="/services/virus-removal" className="text-primary hover:underline">
+                    virus removal
+                  </Link>{" "}
+                  service is top-notch."
+                </p>
+                <div className="font-semibold text-foreground">Lisa T.</div>
+                <div className="text-sm text-muted-foreground">
+                  <Link href="/areas/fourways" className="hover:underline">
+                    Fourways
+                  </Link>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
-      </footer>
+      </section>
+
+      {/* Contact CTA */}
+      <section className="py-20 bg-primary text-primary-foreground">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Fix Your Tech Problems?</h2>
+          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+            Get a free diagnosis today. Our expert technicians are standing by to help with all your repair needs.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <TrackedButton
+              size="lg"
+              variant="secondary"
+              className="text-lg px-8 py-4"
+              eventName="quote_request"
+              eventLabel="Bottom CTA - Book Free Diagnosis"
+              asChild
+            >
+              <Link href="/contact">Book Free Diagnosis</Link>
+            </TrackedButton>
+            <PhoneButton
+              phoneNumber="(011) 123-4567"
+              size="lg"
+              className="text-lg px-8 py-4 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
+            >
+              Call (011) 123-4567
+            </PhoneButton>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }
