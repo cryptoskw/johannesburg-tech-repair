@@ -25,31 +25,7 @@ export default function SandtonRepairPage() {
       />
 
       {/* Header */}
-      <header className="border-b bg-white sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">JTR</span>
-            </div>
-            <span className="font-bold text-xl text-foreground">Johannesburg Tech Repair</span>
-          </Link>
-          <nav className="hidden md:flex items-center space-x-6">
-            <Link href="/#services" className="text-foreground hover:text-primary transition-colors">
-              Services
-            </Link>
-            <Link href="/#about" className="text-foreground hover:text-primary transition-colors">
-              About
-            </Link>
-            <Link href="/#contact" className="text-foreground hover:text-primary transition-colors">
-              Contact
-            </Link>
-            <Button className="bg-primary hover:bg-primary/90">
-              <Phone className="w-4 h-4 mr-2" />
-              Call Now
-            </Button>
-          </nav>
-        </div>
-      </header>
+
 
       {/* Hero Section */}
       <section className="py-16 bg-gradient-to-br from-background to-card">
