@@ -53,7 +53,7 @@ export default function VirusRemovalPage() {
               </Button>
               <Button size="lg" variant="outline" className="text-lg px-8 py-4 bg-transparent">
                 <Phone className="w-5 h-5 mr-2" />
-                Call (011) 123-4567
+                Call (075) 046-1725
               </Button>
             </div>
           </div>
@@ -433,7 +433,7 @@ export default function VirusRemovalPage() {
               className="text-lg px-8 py-4 border-destructive-foreground text-destructive-foreground hover:bg-destructive-foreground hover:text-destructive bg-transparent"
             >
               <Phone className="w-5 h-5 mr-2" />
-              Call (011) 123-4567
+              Call (075) 046-1725
             </Button>
           </div>
         </div>
