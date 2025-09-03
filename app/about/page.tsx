@@ -29,7 +29,7 @@ export default function AboutPage() {
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Your Trusted Tech Repair Experts</h1>
               <p className="text-xl text-muted-foreground mb-8">
-                Serving Johannesburg with professional computer and laptop repair services since 2014
+                Serving Johannesburg with professional computer and laptop repair services since 2019
               </p>
             </div>
           </div>
@@ -43,7 +43,7 @@ export default function AboutPage() {
                 <div>
                   <h2 className="text-3xl font-bold mb-6">Our Story</h2>
                   <p className="text-muted-foreground mb-4">
-                    Founded in 2014, Johannesburg Tech Repair began as a small family business with a simple mission: to
+                    Founded in 2019, Johannesburg Tech Repair began as a small family business with a simple mission: to
                     provide honest, reliable, and affordable tech repair services to the people of Johannesburg.
                   </p>
                   <p className="text-muted-foreground mb-4">
@@ -59,11 +59,11 @@ export default function AboutPage() {
                 <div className="bg-muted/50 p-8 rounded-lg">
                   <div className="grid grid-cols-2 gap-6 text-center">
                     <div>
-                      <div className="text-3xl font-bold text-primary mb-2">10+</div>
+                      <div className="text-3xl font-bold text-primary mb-2">5+</div>
                       <div className="text-sm text-muted-foreground">Years Experience</div>
                     </div>
                     <div>
-                      <div className="text-3xl font-bold text-primary mb-2">5000+</div>
+                      <div className="text-3xl font-bold text-primary mb-2">500+</div>
                       <div className="text-sm text-muted-foreground">Repairs Completed</div>
                     </div>
                     <div>
@@ -274,13 +274,13 @@ export default function AboutPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <TrackedButton
-                  href="tel:+27123456789"
+                  href="tel:+27750461725"
                   variant="default"
                   size="lg"
                   className="bg-primary hover:bg-primary/90"
                   eventName="phone_call_about_cta"
                 >
-                  Call Now: 012 345 6789
+                  Call Now: 075 046 1725
                 </TrackedButton>
                 <TrackedButton href="/contact" variant="outline" size="lg" eventName="contact_page_about_cta">
                   Get Free Quote
