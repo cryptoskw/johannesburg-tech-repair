@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.johannesburgtechrepair.online/sitemap.xml
